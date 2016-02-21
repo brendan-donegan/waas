@@ -45,7 +45,11 @@ def _get_cloud_label(data):
 
 
 def _get_wind_label(data, units='metric'):
-    return str(data['wind']['speed']) + SPEED_UNITS[units]
+    return "{speed}{units}, {direction}".format(
+        speed=str(data['wind']['speed']),
+        units=SPEED_UNITS[units],
+        direction=degrees_to_cardinal(data['wind']['deg']),
+    )
 
 
 def get_current_weather(ip=None, units='metric'):
