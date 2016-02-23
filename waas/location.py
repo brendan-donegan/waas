@@ -15,7 +15,10 @@ def get_coords_from_ip(ip=None):
     if ip is None:
         ip = _get_local_ip()
     match = geolite2.lookup(ip)
-    return match.location
+    if match is not None:
+        return match.location
+    else:
+        return None
 
 
 def degrees_to_cardinal(degrees):

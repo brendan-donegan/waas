@@ -14,8 +14,14 @@ def main():
         help="IP address to get weather for. Uses "
         "your own IP address if not specified."
     )
+    parser.add_argument(
+        '--units',
+        help="Unit system to use.",
+        choices=['metric','imperial'],
+        default='metric'
+    )
     args = parser.parse_args()
-    print(get_current_weather(args.ip))
+    print(get_current_weather(ip=args.ip, units=args.units))
 
 
 if __name__ == "__main__":
