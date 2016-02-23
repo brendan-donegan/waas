@@ -8,3 +8,12 @@ command is run on if no IP is supplied.
 
 Setup
 =====
+WaaS can be installed with the normal virtualenv steps:
+
+    virtualenv --python=python2.7 venv
+    . venv/bin/activate
+    python setup.py develop```
+
+and then run with:
+
+    waas
