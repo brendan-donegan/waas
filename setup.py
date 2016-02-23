@@ -18,7 +18,9 @@ setup(
     author_email="brendan.j.donegan@gmail.com",
     description=("A simple application that prints out the weather "
                  "at your current location, or for a specified IP."),
+    setup_requires=['coverage', 'nose>=1.0'],
     install_requires=install_requires,
+    test_suite='waas.tests',
     keywords="weather",
     long_description=read("README.md"),
     entry_points={
